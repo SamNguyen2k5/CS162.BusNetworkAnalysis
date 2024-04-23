@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="592px" preserveAspectRatio="none" style="width:1202px;height:592px;background:#FFFFFF;" version="1.1" viewBox="0 0 1202 592" width="1202px" zoomAndPan="magnify"><defs/><g><!--MD5=[d7c6ff2973ab5a84e304cf37b3dcdb2f]
+class ObjectQuery--><g id="elem_ObjectQuery"><rect codeLine="4" fill="#F1F1F1" height="276.1563" id="ObjectQuery" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="339" x="431.5" y="10"/><ellipse cx="548.25" cy="26" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M551.2188,31.6406 Q550.6406,31.9375 550,32.0781 Q549.3594,32.2344 548.6563,32.2344 Q546.1563,32.2344 544.8281,30.5938 Q543.5156,28.9375 543.5156,25.8125 Q543.5156,22.6875 544.8281,21.0313 Q546.1563,19.375 548.6563,19.375 Q549.3594,19.375 550,19.5313 Q550.6563,19.6875 551.2188,19.9844 L551.2188,22.7031 Q550.5938,22.125 550,21.8594 Q549.4063,21.5781 548.7813,21.5781 Q547.4375,21.5781 546.75,22.6563 Q546.0625,23.7188 546.0625,25.8125 Q546.0625,27.9063 546.75,28.9844 Q547.4375,30.0469 548.7813,30.0469 Q549.4063,30.0469 550,29.7813 Q550.5938,29.5 551.2188,28.9219 L551.2188,31.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="568.75" y="30.8467">ObjectQuery</text><rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="764.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="765.5" y="19.1387">T</text><line style="stroke:#181818;stroke-width:0.5;" x1="432.5" x2="769.5" y1="42" y2="42"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="439.5" y="52.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="451.5" y="58.9951">_objs: dict</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="439.5" y="68.9453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="451.5" y="75.292">_ObjectType: object</text><line style="stroke:#181818;stroke-width:0.5;" x1="432.5" x2="769.5" y1="82.5938" y2="82.5938"/><ellipse cx="442.5" cy="96.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="451.5" y="99.5889">__len__() -&gt; int</text><ellipse cx="442.5" cy="112.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="451.5" y="115.8857">__iter__() -&gt; Iterable[T]</text><ellipse cx="442.5" cy="128.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="451.5" y="132.1826">__getitem__() -&gt; T</text><ellipse cx="442.5" cy="145.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="451.5" y="148.4795">ids() -&gt; dict_keys</text><ellipse cx="442.5" cy="161.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="313" x="451.5" y="164.7764">query_to_dict(pred: Callable[[T], bool]) -&gt; dict</text><ellipse cx="442.5" cy="177.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="288" x="451.5" y="181.0732">search_to_dict(attr: str, value: Any) -&gt; dict</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="451.5" y="197.3701"> </text><ellipse cx="442.5" cy="210.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="451.5" y="213.667">to_dict()</text><ellipse cx="442.5" cy="226.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="451.5" y="229.9639">to_csv(file: str, kwargs)</text><ellipse cx="442.5" cy="242.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="451.5" y="246.2607">to_json(file: str)</text><ellipse cx="442.5" cy="259.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="212" x="451.5" y="262.5576">output_as_csv(file: str, kwargs)</text><ellipse cx="442.5" cy="275.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="451.5" y="278.8545">output_as_json(file: str)</text></g><!--MD5=[df2abe1412ddd70c6b999cebf4e016f1]
+class StopQuery--><g id="elem_StopQuery"><rect codeLine="23" fill="#F1F1F1" height="96.8906" id="StopQuery" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="364" x="830" y="346"/><ellipse cx="971.25" cy="362" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M974.2188,367.6406 Q973.6406,367.9375 973,368.0781 Q972.3594,368.2344 971.6563,368.2344 Q969.1563,368.2344 967.8281,366.5938 Q966.5156,364.9375 966.5156,361.8125 Q966.5156,358.6875 967.8281,357.0313 Q969.1563,355.375 971.6563,355.375 Q972.3594,355.375 973,355.5313 Q973.6563,355.6875 974.2188,355.9844 L974.2188,358.7031 Q973.5938,358.125 973,357.8594 Q972.4063,357.5781 971.7813,357.5781 Q970.4375,357.5781 969.75,358.6563 Q969.0625,359.7188 969.0625,361.8125 Q969.0625,363.9063 969.75,364.9844 Q970.4375,366.0469 971.7813,366.0469 Q972.4063,366.0469 973,365.7813 Q973.5938,365.5 974.2188,364.9219 L974.2188,367.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="991.75" y="366.8467">StopQuery</text><line style="stroke:#181818;stroke-width:0.5;" x1="831" x2="1193" y1="378" y2="378"/><line style="stroke:#181818;stroke-width:0.5;" x1="831" x2="1193" y1="386" y2="386"/><ellipse cx="841" cy="399.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="331" x="850" y="402.9951">query(pred: Callable[[Stop], bool]) -&gt; StopQuery</text><ellipse cx="841" cy="415.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="283" x="850" y="419.292">search(attr: str, value: Any) -&gt; StopQuery</text><ellipse cx="841" cy="432.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="338" x="850" y="435.5889">search_by_abc(attr: str, value: Any) -&gt; StopQuery</text></g><!--MD5=[6d3eba87c6d929c8bcb941eebdc68dfc]
+class VariantQuery--><g id="elem_VariantQuery"><rect codeLine="29" fill="#F1F1F1" height="96.8906" id="VariantQuery" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="387" x="407.5" y="346"/><ellipse cx="552.75" cy="362" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M555.7188,367.6406 Q555.1406,367.9375 554.5,368.0781 Q553.8594,368.2344 553.1563,368.2344 Q550.6563,368.2344 549.3281,366.5938 Q548.0156,364.9375 548.0156,361.8125 Q548.0156,358.6875 549.3281,357.0313 Q550.6563,355.375 553.1563,355.375 Q553.8594,355.375 554.5,355.5313 Q555.1563,355.6875 555.7188,355.9844 L555.7188,358.7031 Q555.0938,358.125 554.5,357.8594 Q553.9063,357.5781 553.2813,357.5781 Q551.9375,357.5781 551.25,358.6563 Q550.5625,359.7188 550.5625,361.8125 Q550.5625,363.9063 551.25,364.9844 Q551.9375,366.0469 553.2813,366.0469 Q553.9063,366.0469 554.5,365.7813 Q555.0938,365.5 555.7188,364.9219 L555.7188,367.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="573.25" y="366.8467">VariantQuery</text><line style="stroke:#181818;stroke-width:0.5;" x1="408.5" x2="793.5" y1="378" y2="378"/><line style="stroke:#181818;stroke-width:0.5;" x1="408.5" x2="793.5" y1="386" y2="386"/><ellipse cx="418.5" cy="399.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="361" x="427.5" y="402.9951">query(pred: Callable[[Variant], bool]) -&gt; VariantQuery</text><ellipse cx="418.5" cy="415.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="298" x="427.5" y="419.292">search(attr: str, value: Any) -&gt; VariantQuery</text><ellipse cx="418.5" cy="432.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="338" x="427.5" y="435.5889">search_by_abc(attr: str, value: Any) -&gt; StopQuery</text></g><!--MD5=[e835b82979156c6ac1d036b1a2ea51b1]
+class PathQuery--><g id="elem_PathQuery"><rect codeLine="35" fill="#F1F1F1" height="96.8906" id="PathQuery" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="364" x="8" y="346"/><ellipse cx="149.75" cy="362" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M152.7188,367.6406 Q152.1406,367.9375 151.5,368.0781 Q150.8594,368.2344 150.1563,368.2344 Q147.6563,368.2344 146.3281,366.5938 Q145.0156,364.9375 145.0156,361.8125 Q145.0156,358.6875 146.3281,357.0313 Q147.6563,355.375 150.1563,355.375 Q150.8594,355.375 151.5,355.5313 Q152.1563,355.6875 152.7188,355.9844 L152.7188,358.7031 Q152.0938,358.125 151.5,357.8594 Q150.9063,357.5781 150.2813,357.5781 Q148.9375,357.5781 148.25,358.6563 Q147.5625,359.7188 147.5625,361.8125 Q147.5625,363.9063 148.25,364.9844 Q148.9375,366.0469 150.2813,366.0469 Q150.9063,366.0469 151.5,365.7813 Q152.0938,365.5 152.7188,364.9219 L152.7188,367.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="170.25" y="366.8467">PathQuery</text><line style="stroke:#181818;stroke-width:0.5;" x1="9" x2="371" y1="378" y2="378"/><line style="stroke:#181818;stroke-width:0.5;" x1="9" x2="371" y1="386" y2="386"/><ellipse cx="19" cy="399.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="329" x="28" y="402.9951">query(pred: Callable[[Path], bool]) -&gt; PathQuery</text><ellipse cx="19" cy="415.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="28" y="419.292">search(attr: str, value: Any) -&gt; PathQuery</text><ellipse cx="19" cy="432.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="338" x="28" y="435.5889">search_by_abc(attr: str, value: Any) -&gt; StopQuery</text></g><!--MD5=[6535221d7ceb4bc6177d98cc64fe094a]
+class StopQueryInputMixin--><g id="elem_StopQueryInputMixin"><rect codeLine="41" fill="#F1F1F1" height="64.2969" id="StopQueryInputMixin" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="367" x="828.5" y="503"/><ellipse cx="936.75" cy="519" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M939.7188,524.6406 Q939.1406,524.9375 938.5,525.0781 Q937.8594,525.2344 937.1563,525.2344 Q934.6563,525.2344 933.3281,523.5938 Q932.0156,521.9375 932.0156,518.8125 Q932.0156,515.6875 933.3281,514.0313 Q934.6563,512.375 937.1563,512.375 Q937.8594,512.375 938.5,512.5313 Q939.1563,512.6875 939.7188,512.9844 L939.7188,515.7031 Q939.0938,515.125 938.5,514.8594 Q937.9063,514.5781 937.2813,514.5781 Q935.9375,514.5781 935.25,515.6563 Q934.5625,516.7188 934.5625,518.8125 Q934.5625,520.9063 935.25,521.9844 Q935.9375,523.0469 937.2813,523.0469 Q937.9063,523.0469 938.5,522.7813 Q939.0938,522.5 939.7188,521.9219 L939.7188,524.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="957.25" y="523.8467">StopQueryInputMixin</text><line style="stroke:#181818;stroke-width:0.5;" x1="829.5" x2="1194.5" y1="535" y2="535"/><line style="stroke:#181818;stroke-width:0.5;" x1="829.5" x2="1194.5" y1="543" y2="543"/><ellipse cx="839.5" cy="556.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="341" x="848.5" y="559.9951">from_ndjson(file: str = "stops.json") -&gt; StopQuery</text></g><!--MD5=[96d33a70b9d653a5558c5a4caa5cc150]
+class VariantQueryInputMixin--><g id="elem_VariantQueryInputMixin"><rect codeLine="45" fill="#F1F1F1" height="64.2969" id="VariantQueryInputMixin" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="371" x="415.5" y="503"/><ellipse cx="518.25" cy="519" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M521.2188,524.6406 Q520.6406,524.9375 520,525.0781 Q519.3594,525.2344 518.6563,525.2344 Q516.1563,525.2344 514.8281,523.5938 Q513.5156,521.9375 513.5156,518.8125 Q513.5156,515.6875 514.8281,514.0313 Q516.1563,512.375 518.6563,512.375 Q519.3594,512.375 520,512.5313 Q520.6563,512.6875 521.2188,512.9844 L521.2188,515.7031 Q520.5938,515.125 520,514.8594 Q519.4063,514.5781 518.7813,514.5781 Q517.4375,514.5781 516.75,515.6563 Q516.0625,516.7188 516.0625,518.8125 Q516.0625,520.9063 516.75,521.9844 Q517.4375,523.0469 518.7813,523.0469 Q519.4063,523.0469 520,522.7813 Q520.5938,522.5 521.2188,521.9219 L521.2188,524.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="538.75" y="523.8467">VariantQueryInputMixin</text><line style="stroke:#181818;stroke-width:0.5;" x1="416.5" x2="785.5" y1="535" y2="535"/><line style="stroke:#181818;stroke-width:0.5;" x1="416.5" x2="785.5" y1="543" y2="543"/><ellipse cx="426.5" cy="556.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="345" x="435.5" y="559.9951">from_ndjson(file: str = "vars.json") -&gt; VariantQuery</text></g><!--MD5=[db5727c69e9fbfbb16d55deda175b8fd]
+class PathQueryInputMixin--><g id="elem_PathQueryInputMixin"><rect codeLine="49" fill="#F1F1F1" height="64.2969" id="PathQueryInputMixin" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="366" x="7" y="503"/><ellipse cx="115.25" cy="519" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M118.2188,524.6406 Q117.6406,524.9375 117,525.0781 Q116.3594,525.2344 115.6563,525.2344 Q113.1563,525.2344 111.8281,523.5938 Q110.5156,521.9375 110.5156,518.8125 Q110.5156,515.6875 111.8281,514.0313 Q113.1563,512.375 115.6563,512.375 Q116.3594,512.375 117,512.5313 Q117.6563,512.6875 118.2188,512.9844 L118.2188,515.7031 Q117.5938,515.125 117,514.8594 Q116.4063,514.5781 115.7813,514.5781 Q114.4375,514.5781 113.75,515.6563 Q113.0625,516.7188 113.0625,518.8125 Q113.0625,520.9063 113.75,521.9844 Q114.4375,523.0469 115.7813,523.0469 Q116.4063,523.0469 117,522.7813 Q117.5938,522.5 118.2188,521.9219 L118.2188,524.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="135.75" y="523.8467">PathQueryInputMixin</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="372" y1="535" y2="535"/><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="372" y1="543" y2="543"/><ellipse cx="18" cy="556.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="340" x="27" y="559.9951">from_ndjson(file: str = "paths.json") -&gt; PathQuery</text></g><!--MD5=[d768eb4526983a39f076802a70930c47]
+reverse link ObjectQuery to StopQuery--><g id="link_ObjectQuery_StopQuery"><path codeLine="53" d="M788.01,260.25 C838.68,290.39 890.86,321.44 932.1,345.97 " fill="none" id="ObjectQuery-backto-StopQuery" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="784.15,266.1,770.54,249.86,791.31,254.07,784.15,266.1" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[9cc1c84beca6b8a893cff62f4a5fc237]
+reverse link ObjectQuery to VariantQuery--><g id="link_ObjectQuery_VariantQuery"><path codeLine="54" d="M601,306.48 C601,320.53 601,333.9 601,345.75 " fill="none" id="ObjectQuery-backto-VariantQuery" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="594,306.26,601,286.26,608,306.26,594,306.26" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[9eef2f830e9d363492bc8bef4ce5062d]
+reverse link ObjectQuery to PathQuery--><g id="link_ObjectQuery_PathQuery"><path codeLine="55" d="M413.99,260.25 C363.32,290.39 311.14,321.44 269.9,345.97 " fill="none" id="ObjectQuery-backto-PathQuery" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="410.69,254.07,431.46,249.86,417.85,266.1,410.69,254.07" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[af6f3de014d42b8782c80780e09de277]
+link StopQuery to StopQueryInputMixin--><g id="link_StopQuery_StopQueryInputMixin"><path codeLine="56" d="M1012,443.16 C1012,455.8 1012,469.49 1012,482.33 " fill="none" id="StopQuery-to-StopQueryInputMixin" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="1019,482.77,1012,502.77,1005,482.77,1019,482.77" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[6cd85ea517fced564e3c3184fcf853b8]
+link VariantQuery to VariantQueryInputMixin--><g id="link_VariantQuery_VariantQueryInputMixin"><path codeLine="57" d="M601,443.16 C601,455.8 601,469.49 601,482.33 " fill="none" id="VariantQuery-to-VariantQueryInputMixin" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="608,482.77,601,502.77,594,482.77,608,482.77" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[bb30591a956741398197f5d4692173cd]
+link PathQuery to PathQueryInputMixin--><g id="link_PathQuery_PathQueryInputMixin"><path codeLine="58" d="M190,443.16 C190,455.8 190,469.49 190,482.33 " fill="none" id="PathQuery-to-PathQueryInputMixin" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="none" points="197,482.77,190,502.77,183,482.77,197,482.77" style="stroke:#454645;stroke-width:1.0;"/></g><rect fill="#FFFFFF" height="11.6406" rx="3.5" ry="3.5" style="stroke:none;stroke-width:1.0;" width="112" x="538.25" y="573.2969"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="67" x="538.25" y="582.5791">Generated by</text><text fill="#888888" font-family="sans-serif" font-size="10" font-style="italic" lengthAdjust="spacing" textLength="42" x="608.25" y="582.5791">py2puml</text><!--MD5=[27a80936aa964bbefc78d204d86d209b]
+@startuml
+!theme vibrant
+!pragma useIntermediatePackages false
+
+class ObjectQuery<T> {
+  -_objs: dict
+  -_ObjectType: object
+    
+  +__len__() -> int
+  +__iter__() -> Iterable[T]
+  +__getitem__() -> T
+  +ids() -> dict_keys
+  +query_to_dict(pred: Callable[[T], bool]) -> dict
+  +search_to_dict(attr: str, value: Any) -> dict
+  
+  +to_dict()
+  +to_csv(file: str, kwargs)
+  +to_json(file: str)
+    
+  +output_as_csv(file: str, kwargs)
+  +output_as_json(file: str)
+}
+
+class StopQuery {
+  +query(pred: Callable[[Stop], bool]) -> StopQuery
+  +search(attr: str, value: Any) -> StopQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class VariantQuery {
+  +query(pred: Callable[[Variant], bool]) -> VariantQuery
+  +search(attr: str, value: Any) -> VariantQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class PathQuery {
+  +query(pred: Callable[[Path], bool]) -> PathQuery
+  +search(attr: str, value: Any) -> PathQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class StopQueryInputMixin {
+  +from_ndjson(file: str = "stops.json") -> StopQuery
+}
+
+class VariantQueryInputMixin {
+  +from_ndjson(file: str = "vars.json") -> VariantQuery
+}
+
+class PathQueryInputMixin {
+  +from_ndjson(file: str = "paths.json") -> PathQuery
+}
+
+ObjectQuery <|-d- StopQuery
+ObjectQuery <|-d- VariantQuery
+ObjectQuery <|-d- PathQuery
+StopQueryInputMixin <|-u- StopQuery
+VariantQueryInputMixin <|-u- VariantQuery
+PathQueryInputMixin <|-u- PathQuery
+
+footer Generated by //py2puml//
+@enduml
+
+@startuml
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+!pragma useIntermediatePackages false
+
+class ObjectQuery<T> {
+  -_objs: dict
+  -_ObjectType: object
+    
+  +__len__() -> int
+  +__iter__() -> Iterable[T]
+  +__getitem__() -> T
+  +ids() -> dict_keys
+  +query_to_dict(pred: Callable[[T], bool]) -> dict
+  +search_to_dict(attr: str, value: Any) -> dict
+  
+  +to_dict()
+  +to_csv(file: str, kwargs)
+  +to_json(file: str)
+    
+  +output_as_csv(file: str, kwargs)
+  +output_as_json(file: str)
+}
+
+class StopQuery {
+  +query(pred: Callable[[Stop], bool]) -> StopQuery
+  +search(attr: str, value: Any) -> StopQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class VariantQuery {
+  +query(pred: Callable[[Variant], bool]) -> VariantQuery
+  +search(attr: str, value: Any) -> VariantQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class PathQuery {
+  +query(pred: Callable[[Path], bool]) -> PathQuery
+  +search(attr: str, value: Any) -> PathQuery
+  +search_by_abc(attr: str, value: Any) -> StopQuery
+}
+
+class StopQueryInputMixin {
+  +from_ndjson(file: str = "stops.json") -> StopQuery
+}
+
+class VariantQueryInputMixin {
+  +from_ndjson(file: str = "vars.json") -> VariantQuery
+}
+
+class PathQueryInputMixin {
+  +from_ndjson(file: str = "paths.json") -> PathQuery
+}
+
+ObjectQuery <|-d- StopQuery
+ObjectQuery <|-d- VariantQuery
+ObjectQuery <|-d- PathQuery
+StopQueryInputMixin <|-u- StopQuery
+VariantQueryInputMixin <|-u- VariantQuery
+PathQueryInputMixin <|-u- PathQuery
+
+footer Generated by //py2puml//
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

@@ -1,0 +1,10 @@
+[MAIN]
+max-line-length=120
+
+[MESSAGES CONTROL]
+disable=
+    locally-disabled,
+    invalid-name,
+    trailing-whitespace,
+    missing-final-newline,
+    consider-using-f-string
