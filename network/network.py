@@ -1,9 +1,15 @@
+"""
+Module network.network
+"""
 import copy
 from dataclasses import dataclass
 from typing import TypeVar, Generic, Iterable
 
 @dataclass
 class NetworkConnector:
+    """
+    Defines an directed edge of a generic graph.
+    """
     src:        int
     dest:       int
 
@@ -14,13 +20,22 @@ class NetworkConnector:
     
     @property
     def ends(self) -> tuple[int, int]:
+        """
+        Returns the tuple of the ends of the edge
+        """
         return self.src, self.dest
 
     @property
     def weight(self) -> float:
+        """
+        Virtual weight function of the edge
+        """
         raise NotImplementedError
 
     def unpack(self):
+        """
+        Returns the edge as a generator.
+        """
         yield self
 
     def __hash__(self):
@@ -30,15 +45,23 @@ TNode = TypeVar('TNode')
 TConnector = TypeVar('TConnector')
 
 class Network(Generic[TNode, TConnector]):
+    """
+    Implementation of a generic weighted network.
+    """
     _nodes:     dict
     _adjs:      dict
     _adjs_rev:  dict
 
-    def __init__(self, nodes = {}, adjs = {}, adjs_rev = None) -> None:
+    def __init__(self, nodes = None, adjs = None, adjs_rev = None) -> None:
+        if nodes is None:
+            nodes = dict()
+        if adjs is None:
+            adjs = dict()
+
         self._nodes = nodes
         self._adjs = adjs
 
-        if adjs_rev == None:
+        if adjs_rev is None:
             self._adjs_rev = {}
             for connectors in self._adjs.values():
                 for connector in connectors:
@@ -56,28 +79,49 @@ class Network(Generic[TNode, TConnector]):
         return len(self._nodes)
         
     def degree(self, node_id):
+        """
+        Returns the out-degree of a node.
+        """
         return len(self._adjs[node_id])
         
     def degree_rev(self, node_id):
+        """
+        Returns the in-degree of a node.
+        """
         return len(self._adjs_rev[node_id])
 
     def degrees(self):
+        """
+        Returns the out-degree array.
+        """
         return (self.degree(node) for node in self._adjs.keys())
         
     @property
     def nodes(self):
+        """
+        Returns the set of nodes.
+        """
         return self._nodes
 
     @property
     def adjs(self):
+        """
+        Returns the adjacency list.
+        """
         return self._adjs
 
     @property
     def adjs_rev(self):
+        """
+        Returns the transposed adjacency list.
+        """
         return self._adjs_rev
     
     @property
     def reverse(self):
+        """
+        Returns the transposed network.
+        """
         return Network(
             nodes = self._nodes,
             adjs = self._adjs_rev,
@@ -85,6 +129,9 @@ class Network(Generic[TNode, TConnector]):
         )
     
     def add_edge(self, connector: NetworkConnector):
+        """
+        Add an edge to the network.
+        """
         src, dest = connector.ends
         if src not in self._nodes:
             self._nodes[src] = None
@@ -100,6 +147,9 @@ class Network(Generic[TNode, TConnector]):
         self._adjs_rev[dest].append(connector)
 
     def shallow_copy(self):
+        """
+        Copy the structure of the network (does not copy the inner node data).
+        """
         return Network(
             nodes = copy.copy(self._nodes),
             adjs = copy.copy(self._adjs)
@@ -107,6 +157,9 @@ class Network(Generic[TNode, TConnector]):
     
 @dataclass
 class HideableAdjacencyList:
+    """
+    Adjacency list with temporary deletion.
+    """
     obj:        dict[int, Iterable[NetworkConnector]]
     hidden:     set[int]
 
@@ -120,9 +173,12 @@ class HideableAdjacencyList:
         )
 
 class RemovableNetwork(Network):
+    """
+    Implementation of a generic weighted network with node removability / hideability.
+    """
     _hidden:    set[int]
 
-    def __init__(self, nodes = {}, adjs = {}) -> None:
+    def __init__(self, nodes = None, adjs = None) -> None:
         super().__init__(nodes, adjs)
         for node in self._adjs:
             self._adjs[node] = set(self._adjs[node])
@@ -133,12 +189,18 @@ class RemovableNetwork(Network):
 
     @classmethod
     def from_net(cls, net: Network):
+        """
+        Converts a network to a removable network.
+        """
         return cls(
             nodes = copy.copy(net.nodes),
             adjs = copy.copy(net.adjs)
         )
     
     def add_edge(self, connector: NetworkConnector):
+        """
+        Add an edge to the network.
+        """
         src, dest = connector.ends
         if src not in self._nodes:
             self._nodes[src] = None
@@ -154,15 +216,27 @@ class RemovableNetwork(Network):
         self._adjs_rev[dest].add(connector)
 
     def hide_node(self, node: int):
+        """
+        Temporarily hide a node.
+        """
         self._hidden.add(node)
 
     def unhide_node(self, node: int):
+        """
+        Temporarily unhide a node.
+        """
         self._hidden.remove(node)
     
     def is_hidden(self, node: int):
+        """
+        Returns if a node is hidden.
+        """
         return node in self._hidden
 
     def remove_node(self, node: int):
+        """
+        Permanently remove a node.
+        """
         connectors = self._adjs.pop(node, {})
         connectors_rev = self._adjs_rev.pop(node, {})
 
@@ -174,26 +248,41 @@ class RemovableNetwork(Network):
         self._nodes.pop(node)
 
     def is_removed(self, node: int):
+        """
+        Returns if a node is removed.
+        """
         return node in self._nodes
 
-    def degree(self, node):
+    def degree(self, node_id):
+        """
+        Returns the out-degree of a node, taking hidden nodes into account.
+        """
         return sum(
             1 
-            for connector in self._adjs.get(node, [])
+            for connector in self._adjs.get(node_id, [])
             if (connector.src not in self._hidden) and (connector.dest not in self._hidden)
         )
         
-    def degree_rev(self, node):
+    def degree_rev(self, node_id):
+        """
+        Returns the in-degree of a node, taking hidden nodes into account.
+        """
         return sum(
             1 
-            for connector in self._adjs_rev.get(node, [])
+            for connector in self._adjs_rev.get(node_id, [])
             if (connector.src not in self._hidden) and (connector.dest not in self._hidden)
         )
 
     @property
     def adjs(self):
+        """
+        Returns the hideable adjacency list.
+        """
         return HideableAdjacencyList(obj=self._adjs, hidden=self._hidden)
 
     @property
     def adjs_rev(self):
+        """
+        Returns the transposed hideable adjacency list.
+        """
         return HideableAdjacencyList(obj=self._adjs_rev, hidden=self._hidden)
