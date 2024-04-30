@@ -14,21 +14,23 @@ class network.Network<TNode, TNetworkConnector> {
   +property adjs: Dict[int, TNetworkConnector]
 }
 
-class network.NetworkDijkstra {
+class network.shortest_paths.NetworkDijkstra {
   +src: int
+  +property INFINITY: float
   +property dists: Dict[int, float]
   +property pars: Dict[int, int]
   +property count_paths: list[int]
+  +property search_space: Dict[int, float]
   +from_net(self, net: Network, src: int)
 }
 
-class network_analysis.NetworkAnalysisBetweenness {
+class network.shortest_paths.NetworkAnalysisBetweenness {
   +property scores: Dict[int, int]
   +from_net(net: Network, dijkstra_engine: NetworkDijkstra)
   +top_scores() -> list[int]
 }
 
-class busnet.BusNetworkConnector {
+class bus.busnet.BusNetworkConnector {
   +route_ids: tuple[int, int]
   +time: float
   +length: float
@@ -36,14 +38,14 @@ class busnet.BusNetworkConnector {
   +weight() -> float
 }
 
-class busnet.BusNetwork as "BusNetwork = Network[Stop, BusNetworkConnector]" {
+class bus.busnet.BusNetwork as "BusNetwork = Network[Stop, BusNetworkConnector]" {
   +from_json(file: str) -> BusNetwork
   +from_ndjsons(sides_set_type: str = "spatial", **kwargs) -> BusNetwork
   +to_dict() -> dict
   +to_json(file: str) -> None
 }
 
-class busnet.BusNetworkDijkstra {
+class bus.busnet.BusNetworkDijkstra {
   +path_to_json(dest: int, file: str)
   +shortest_path_to_json(src: int, dest: int, file: str)
 }

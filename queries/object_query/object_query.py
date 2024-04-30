@@ -1,9 +1,11 @@
 """
 Module queries.object_query
 """
-import ndjson
-import pandas as pd
+import json
 from typing import Callable, Any
+import pandas as pd
+
+import ndjson
 
 class ObjectQuery:
     """
@@ -74,20 +76,28 @@ class ObjectQuery:
         """
         self.to_pandas().to_csv(file, index=False, **kwargs)
 
-    def to_json(self, file: str):
+    def to_json(self, file: str = None, module: str = 'ndjson'):
         """
         Exports ObjectQuery information to JSON file. 
         The function dumps the dictionary _objs into a JSON file.
         """
         json_objs = [obj.to_dict() for obj in self._objs.values()]
+        json_module = ndjson if module == 'ndjson' else json
+
+        if file is None:
+            return json_module.dumps(json_objs, ensure_ascii=False)
+
         with open(file, 'w', encoding='utf-8') as f:
-            ndjson.dump(json_objs, f, ensure_ascii=False)
+            json_module.dump(json_objs, f, ensure_ascii=False)
 
     def to_dict(self):
         """
         Returns internal state _objs.
         """
-        return self._objs
+        return {
+            key: value.to_dict()
+            for key, value in self._objs.items()
+        }
     
     # Aliases
     output_as_json = to_json

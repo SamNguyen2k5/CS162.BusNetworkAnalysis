@@ -1,0 +1,153 @@
+@startuml classes
+set namespaceSeparator none
+class "BusNetwork" as network.bus.busnet.BusNetwork {
+  from_json(file: str)
+  from_ndjsons(stops_json_file: str, vars_json_file: str, paths_json_file: str, sides_set_type: str)
+  to_dict()
+  to_json(file: str)
+}
+class "BusNetworkConnector" as network.bus.busnet.BusNetworkConnector {
+  length : float
+  real_path : list[tuple[float, float]]
+  route_ids : tuple[int, int]
+  time : float
+  weight
+  from_dict(obj: dict)
+  to_dict() -> dict
+}
+class "BusNetworkDijkstra" as network.bus.busnet.BusNetworkDijkstra {
+  all_shortest_path_to_json(net: Network, file: str)
+  path_to_json(dest: int, file: str, write_mode: str)
+  shortest_path_to_json(net: Network, src: int, dest: int, file: str)
+}
+class "Default" as network.bus.busnet.BusNetwork.SidesSet.Default {
+  best_side(coord: tuple[float, float]) -> list[tuple[float, int]]
+  best_side_candidates_count(coord: tuple[float, float]) -> int
+  close()
+}
+class "HideableAdjacencyList" as network.network.HideableAdjacencyList {
+  hidden : set[int]
+  obj : Dict[int, Iterable[TConnector]]
+}
+class "Network" as network.network.Network {
+  adjs
+  adjs_rev
+  nodes
+  reverse
+  add_edge(connector: NetworkConnector)
+  degree(node_id)
+  degree_rev(node_id)
+  degrees()
+  shallow_copy()
+}
+class "NetworkAnalysisBetweenness" as network.shortest_paths.betweenness.NetworkAnalysisBetweenness {
+  scores
+  from_net(net: Network, dijkstra_engine: NetworkDijkstra, alg: str)
+  top_scores(k: int)
+}
+class "NetworkBidirectionalDijkstra" as network.shortest_paths.bidirectional_dijkstra.NetworkBidirectionalDijkstra {
+  search_space
+  from_net(net: Network)
+  path(src: int, dest: int)
+}
+class "NetworkConnector" as network.network.NetworkConnector {
+  dest : int
+  ends
+  src : int
+  weight
+  unpack()
+}
+class "NetworkConnectorTreeNode" as network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkConnectorTreeNode {
+  dest
+  left
+  right
+  src
+  weight
+  unpack() -> Iterable[NetworkConnector]
+}
+class "NetworkContractionHierarchies" as network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies {
+  level
+  no_shortcuts
+  dist(src: int, dest: int)
+  from_net(net: Network)
+  path(src: int, dest: int)
+  raw_path(src: int, dest: int)
+}
+class "NetworkContractionHierarchiesLazyED" as network.shortest_paths.contraction_hierarchies.lazy_ED.NetworkContractionHierarchiesLazyED {
+}
+class "NetworkContractionHierarchiesPeriodicED" as network.shortest_paths.contraction_hierarchies.periodic_ED.NetworkContractionHierarchiesPeriodicED {
+}
+class "NetworkContractionHierarchiesRandom" as network.shortest_paths.contraction_hierarchies.random.NetworkContractionHierarchiesRandom {
+}
+class "NetworkDijkstra" as network.shortest_paths.dijkstra.NetworkDijkstra {
+  INFINITY
+  dists
+  pars
+  search_space
+  src
+  from_src(net: Network, src: int, INITIAL: float, INFINITY: float)
+  path_to(dest: int)
+  reverse_path_from(dest: int)
+}
+class "NetworkDijkstraDescendantsCount" as network.shortest_paths.dijkstra.NetworkDijkstraDescendantsCount {
+  count_paths
+  from_engine(engine: NetworkDijkstra)
+}
+class "NetworkDijkstraLocalDistance" as network.shortest_paths.dijkstra.NetworkDijkstraLocalDistance {
+}
+class "NetworkDijkstraLocalSteps" as network.shortest_paths.dijkstra.NetworkDijkstraLocalSteps {
+}
+class "NetworkDijkstraSingleDestination" as network.shortest_paths.dijkstra.NetworkDijkstraSingleDestination {
+}
+class "NetworkSpatialAStar" as network.shortest_paths.a_star.NetworkSpatialAStar {
+  INFINITY
+  dists
+  pars
+  search_space
+  src
+  from_net(net: Network)
+  path(src: int, dest: int) -> None
+}
+class "RemovableNetwork" as network.network.RemovableNetwork {
+  adjs
+  adjs_rev
+  add_edge(connector: TConnector)
+  degree(node_id: int)
+  degree_rev(node_id: int)
+  from_net(net: Network[TNode, TConnector])
+  hide_node(node: int)
+  is_hidden(node: int)
+  is_removed(node: int)
+  remove_node(node: int)
+  unhide_node(node: int)
+}
+class "SidesSet" as network.bus.busnet.BusNetwork.SidesSet {
+  best_side(coord: tuple[float, float]) -> list[tuple[float, int]]
+  best_side_candidates_count(coord: tuple[float, float]) -> int
+  close()
+  from_path(path: Path)
+}
+class "Spatial" as network.bus.busnet.BusNetwork.SidesSet.Spatial {
+  best_side(coord: tuple[float, float]) -> list[tuple[float, int]]
+  best_side_candidates_count(coord: tuple[float, float]) -> list[tuple[float, int]]
+  close()
+}
+network.bus.busnet.BusNetwork --|> network.network.Network
+network.bus.busnet.BusNetworkConnector --|> network.network.NetworkConnector
+network.bus.busnet.BusNetworkDijkstra --|> network.shortest_paths.dijkstra.NetworkDijkstra
+network.network.RemovableNetwork --|> network.network.Network
+network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies --|> network.shortest_paths.bidirectional_dijkstra.NetworkBidirectionalDijkstra
+network.shortest_paths.contraction_hierarchies.lazy_ED.NetworkContractionHierarchiesLazyED --|> network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies
+network.shortest_paths.contraction_hierarchies.periodic_ED.NetworkContractionHierarchiesPeriodicED --|> network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies
+network.shortest_paths.contraction_hierarchies.random.NetworkContractionHierarchiesRandom --|> network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies
+network.shortest_paths.dijkstra.NetworkDijkstraLocalDistance --|> network.shortest_paths.dijkstra.NetworkDijkstra
+network.shortest_paths.dijkstra.NetworkDijkstraLocalSteps --|> network.shortest_paths.dijkstra.NetworkDijkstra
+network.shortest_paths.dijkstra.NetworkDijkstraSingleDestination --|> network.shortest_paths.dijkstra.NetworkDijkstra
+network.bus.busnet.BusNetwork.SidesSet.Default --* network.bus.busnet.BusNetwork.SidesSet : _sides_set
+network.bus.busnet.BusNetwork.SidesSet.Spatial --* network.bus.busnet.BusNetwork.SidesSet : _sides_set
+network.network.Network --* network.shortest_paths.a_star.NetworkSpatialAStar : _net
+network.network.Network --* network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies : _overlay_net
+network.network.Network --* network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies : _net
+network.network.Network --* network.shortest_paths.dijkstra.NetworkDijkstra : _net
+network.network.RemovableNetwork --* network.shortest_paths.contraction_hierarchies.contraction_hierarchies.NetworkContractionHierarchies : _rem_net
+@enduml

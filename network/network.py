@@ -3,7 +3,7 @@ Module network.network
 """
 import copy
 from dataclasses import dataclass
-from typing import TypeVar, Generic, Iterable
+from typing import TypeVar, Generic, Iterable, Dict
 
 @dataclass
 class NetworkConnector:
@@ -41,22 +41,22 @@ class NetworkConnector:
     def __hash__(self):
         return id(self)
 
-TNode = TypeVar('TNode')
-TConnector = TypeVar('TConnector')
+TNode = TypeVar('TNode', bound=object)
+TConnector = TypeVar('TConnector', bound=NetworkConnector)
 
 class Network(Generic[TNode, TConnector]):
     """
     Implementation of a generic weighted network.
     """
-    _nodes:     dict
-    _adjs:      dict
-    _adjs_rev:  dict
+    _nodes:     Dict[int, TNode]
+    _adjs:      Dict[int, TConnector]
+    _adjs_rev:  Dict[int, TConnector]
 
     def __init__(self, nodes = None, adjs = None, adjs_rev = None) -> None:
         if nodes is None:
-            nodes = dict()
+            nodes = {}
         if adjs is None:
-            adjs = dict()
+            adjs = {}
 
         self._nodes = nodes
         self._adjs = adjs
@@ -156,11 +156,11 @@ class Network(Generic[TNode, TConnector]):
         )
     
 @dataclass
-class HideableAdjacencyList:
+class HideableAdjacencyList(Generic[TConnector]):
     """
     Adjacency list with temporary deletion.
     """
-    obj:        dict[int, Iterable[NetworkConnector]]
+    obj:        Dict[int, Iterable[TConnector]]
     hidden:     set[int]
 
     def __getitem__(self, key):
@@ -172,7 +172,7 @@ class HideableAdjacencyList:
             self.obj[key]
         )
 
-class RemovableNetwork(Network):
+class RemovableNetwork(Network[TNode, TConnector]):
     """
     Implementation of a generic weighted network with node removability / hideability.
     """
@@ -188,7 +188,7 @@ class RemovableNetwork(Network):
         self._hidden = set()
 
     @classmethod
-    def from_net(cls, net: Network):
+    def from_net(cls, net: Network[TNode, TConnector]):
         """
         Converts a network to a removable network.
         """
@@ -197,7 +197,7 @@ class RemovableNetwork(Network):
             adjs = copy.copy(net.adjs)
         )
     
-    def add_edge(self, connector: NetworkConnector):
+    def add_edge(self, connector: TConnector):
         """
         Add an edge to the network.
         """
@@ -253,7 +253,7 @@ class RemovableNetwork(Network):
         """
         return node in self._nodes
 
-    def degree(self, node_id):
+    def degree(self, node_id: int):
         """
         Returns the out-degree of a node, taking hidden nodes into account.
         """
@@ -263,7 +263,7 @@ class RemovableNetwork(Network):
             if (connector.src not in self._hidden) and (connector.dest not in self._hidden)
         )
         
-    def degree_rev(self, node_id):
+    def degree_rev(self, node_id: int):
         """
         Returns the in-degree of a node, taking hidden nodes into account.
         """
@@ -274,14 +274,14 @@ class RemovableNetwork(Network):
         )
 
     @property
-    def adjs(self):
+    def adjs(self) -> HideableAdjacencyList:
         """
         Returns the hideable adjacency list.
         """
         return HideableAdjacencyList(obj=self._adjs, hidden=self._hidden)
 
     @property
-    def adjs_rev(self):
+    def adjs_rev(self) -> HideableAdjacencyList:
         """
         Returns the transposed hideable adjacency list.
         """
