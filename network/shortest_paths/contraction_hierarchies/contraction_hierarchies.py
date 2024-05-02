@@ -5,11 +5,15 @@ from typing import Iterable
 from network.network import Network, NetworkConnector, RemovableNetwork
 from network.shortest_paths import NetworkBidirectionalDijkstra, NetworkDijkstraLocalSteps
 
-class NetworkConnectorTreeNode:
+class NetworkConnectorTreeNode(NetworkConnector):
     """
     A sequence of network edges stored in a binary-tree style.
     """
     def __init__(self, left, right):
+        super().__init__(
+            src = left.src,
+            dest = right.dest
+        )
         self._left = left
         self._right = right
         self._weight = left.weight + right.weight
@@ -27,20 +31,6 @@ class NetworkConnectorTreeNode:
         Returns the right node of the binary tree.
         """
         return self._right
-
-    @property
-    def src(self):
-        """
-        Returns the starting network node of the edge sequence.
-        """
-        return self._left.src
-
-    @property
-    def dest(self):
-        """
-        Returns the ending network node of the edge sequence.
-        """
-        return self._right.dest
 
     @property
     def weight(self):
@@ -129,6 +119,8 @@ class NetworkContractionHierarchies(NetworkBidirectionalDijkstra):
         self._nodes = net.nodes
         self._level = {}
         self._no_shortcuts = 0
+        
+        self._early_stop = False
 
     def _edge_difference(self, node: int, shortcuts: list[tuple[int, int]] = None, local_steps: int = 50) -> int:
         if not shortcuts:

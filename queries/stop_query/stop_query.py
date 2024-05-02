@@ -3,8 +3,10 @@ Module queries.stop_query
 """
 from typing import Callable, Any
 
+import pandas as pd
 from elements.stop import Stop
 
+from helper import wgs84_to_vn2000
 from queries.object_query import ObjectQuery
 from queries.stop_query.__mixins__.input import StopQueryInputMixin
 
@@ -26,6 +28,16 @@ class StopQuery(ObjectQuery, StopQueryInputMixin):
         Searches for all Stops with attributes matching value, return as a dictionary.
         """
         return StopQuery(self.search_to_dict(attr, value))
+    
+    def to_pandas(self, has_cartesian: bool = False, **kwargs) -> pd.DataFrame:
+        def mod_row(row: pd.Series) -> pd.Series:
+            # pylint: disable=unpacking-non-sequence
+            if has_cartesian:
+                row['coord_x'], row['coord_y'] = wgs84_to_vn2000(row['Lat'], row['Lng'])
+
+            return row
+
+        return super().to_pandas().apply(mod_row, axis=1)
     
     # Aliases
     search_by_abc = search

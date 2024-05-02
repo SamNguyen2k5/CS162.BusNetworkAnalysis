@@ -11,21 +11,27 @@ class NetworkBidirectionalDijkstra:
     """
     Implementation of the Bidirectional Dijkstra algorithm.
     """
-    _INFINITY:  float
-    _nodes:     Dict[int, TNode]
-    _adjs_fwd:  Dict[int, list[NetworkConnector]]
-    _adjs_bkd:  Dict[int, list[NetworkConnector]]
+    _INFINITY:      float
+    _nodes:         Dict[int, TNode]
+    _adjs_fwd:      Dict[int, list[NetworkConnector]]
+    _adjs_bkd:      Dict[int, list[NetworkConnector]]
 
-    _dists_fwd: Dict[int, float]
-    _dists_bkd: Dict[int, float]
-    _pars_fwd:  Dict[int, NetworkConnector]
-    _pars_bkd:  Dict[int, NetworkConnector]
+    _dists_fwd:     Dict[int, float]
+    _dists_bkd:     Dict[int, float]
+    _pars_fwd:      Dict[int, NetworkConnector]
+    _pars_bkd:      Dict[int, NetworkConnector]
 
-    def _from_net(self, net: Network, INFINITY: float = float('inf')):
+    _early_stop:    bool
+
+    def __init__(self):
+        self._early_stop = False
+
+    def _from_net(self, net: Network, INFINITY: float = float('inf'), **kwargs):
         self._INFINITY = INFINITY
         self._nodes = net.nodes
         self._adjs_fwd = net.adjs
         self._adjs_bkd = net.adjs_rev
+        self._early_stop = kwargs.get('early_stop', True)
         return self
         
     @classmethod
@@ -87,6 +93,10 @@ class NetworkBidirectionalDijkstra:
                 if dist_t > dist:
                     pq_bkd.queue.clear()
                     continue
+
+            if self._early_stop:
+                if dist_s + dist_t > dist:
+                    break
 
             (dist, mid) = min(
                 (dist, mid), 

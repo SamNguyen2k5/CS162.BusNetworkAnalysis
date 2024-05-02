@@ -204,6 +204,9 @@ class Stop(StopInputMixin, StopOutputMixin):
 
     @property
     def routes(self):
+        """
+        Returns the list of routes passing the Stop
+        """
         return self._routes
 
     @routes.setter

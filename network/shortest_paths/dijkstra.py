@@ -117,8 +117,29 @@ class NetworkDijkstraSingleDestination(NetworkDijkstra):
     """
     _dest:              int
 
-    def __init__(self, dest: int):
+    def __init__(self, dest: int = None):
         self._dest = dest
+
+    @classmethod
+    def from_net(cls, net: Network):
+        """
+        Initialise from the network.
+        """
+        obj = cls()
+        obj._net = net
+        return obj
+    
+    def path(self, src: int, dest: int):
+        """
+        Returns the shortest path from source src to destination dest.
+        """
+        self._dest = dest
+        self.from_src(net=self._net, src=src)
+
+        if dest not in self.dists:
+            return self.INFINITY, []
+
+        return self.dists[dest], self.path_to(dest)
 
     @property
     def _is_terminated(self):
