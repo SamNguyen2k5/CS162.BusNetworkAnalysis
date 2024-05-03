@@ -1,5 +1,12 @@
 # CS162 Solo Project: Bus Network Analysis
-See the [full report](./CS162_Project_Report.pdf).
+
+* See the [full report](./CS162_Project_Report.pdf).
+* To clone the project, run the command:
+```
+git clone https://github.com/SamNguyen2k5/CS162.BusNetworkAnalysis.git
+```
+
+----------------------------------------------------------------------
 Below are the tasks of each week with their corresponding module.
 
 ## Week 03
