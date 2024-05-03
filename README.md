@@ -31,7 +31,7 @@ Below are the tasks of each week with their corresponding module.
 ### 4. Chapter 3, Shapely: Spatial Analysis
 ### 5. Chapter 4, R-tree: Data Structure for Spatial Data
 ### 6. Section 11.1, Querying a `pandas.DataFrame`
-* [Jupyter notebook `llm_test.ipynb`](./llm_test.ipynb)
+* [Jupyter notebook `llm_test.ipynb`](./llm-test.ipynb)
 
 ## Week 07
 ### 1. Chapter 6, Bus Network Graph: Construction Stage
